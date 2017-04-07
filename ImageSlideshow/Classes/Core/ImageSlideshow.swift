@@ -197,7 +197,9 @@ open class ImageSlideshow: UIView {
         if case .hidden = self.pageControlPosition {
             pageControl.isHidden = true
         } else {
-            pageControl.isHidden = false
+            // Don't want this because, if page control is set to auto hide for
+            // single page dot then this will break that functionality
+            // pageControl.isHidden = false
         }
         pageControl.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: 10)
         pageControl.center = CGPoint(x: frame.size.width / 2, y: frame.size.height - 12.0)
